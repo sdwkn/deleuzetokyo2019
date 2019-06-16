@@ -1,3 +1,11 @@
+# Deleuze/Guattari Conference HomePage
+
+This repository is hugo template. The deleuze/guattari conference tokyo 2019 website is being constructed using this template.
+
+It is not build from scratch, but it is helped by hugo conference template. Thanks a lot for jweslley is making that.
+
+[Deleuze/Guattari Website](https://www.deleuze.jp)
+
 # Hugo conference
 
 Hugo conference is a theme for conferences/events based on the original [conf-boilerplate theme](https://github.com/braziljs/conf-boilerplate/) by [BrazilJS Foundation](http://braziljs.org/) and his many contributors.
@@ -39,4 +47,3 @@ Google now requires a Google Maps JavaScript API Key to show maps. You can obtai
 ## License
 
 MIT, see [LICENSE](https://github.com/jweslley/hugo-conference/blob/master/LICENSE).
-
