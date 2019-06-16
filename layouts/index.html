@@ -17,7 +17,6 @@
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
   <link rel="stylesheet" type="text/css" href="/css/main.css">
-
 </head>
 <body>
   <div class="global">
@@ -32,22 +31,21 @@
             {{ partial $section $.Site.Params }}
           </section>
         {{ end }}
-
-        <footer class="footer">
-          <p>Made with ♥ by <a href="https://github.com/braziljs/conf-boilerplate" target="_blank">Conf Boilerplate</a> :)</p>
-        </footer>
       </div>
     </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="/js/jquery.js"><\/script>')</script>
-  {{ if isset .Site.Params "address" }}
+  {{ if isset .Site.Params "address_camp" }}
   {{ with .Site.Params.GoogleMapsKey }}
-  <script src="https://maps.google.com/maps/api/js?key={{ . }}"></script>
+  <script src="https://maps.google.com/maps/api/js?language=en&key={{ . }}"></script>
   <script src="/js/main.js"></script>
   {{ end }}
   {{ end }}
   {{ template "_internal/google_analytics_async.html" . }}
+
+  <script src="/js/main.js"></script>
+  <script src="/js/data.js"></script>
 </body>
 </html>

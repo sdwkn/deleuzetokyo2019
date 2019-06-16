@@ -1,11 +1,26 @@
 <h2 class="section-title">{{ .titles.sponsors }}</h2>
 
-<ul class="sponsors-list">
-{{ range $sponsor := .sponsors }}
-  <li class="sponsor-item" itemscope itemtype="http://schema.org/Organization">
-    <a href="{{ .url }}" class="sponsor--link" itemprop="url" target="_blank">
-      <img src="{{ .logo }}" alt="{{ .name }}" class="photo" itemprop="image">
+<ul itemprop="description">
+  <li>
+    <a href="https://www.euppublishing.com" target="_blank">
+      Edinburgh University Press
     </a>
   </li>
-{{ end }}
+
+  <li style="margin-left: 1.5em; font-size: 1.1em; list-style: upper-armenian;">
+    <a href="https://www.euppublishing.com/loi/dlgs" target="_blank">
+      Deleuze and Guattari Studies
+    </a>
+  </li>
+
+  <li>
+    <a href="https://utcp.c.u-tokyo.ac.jp/index_en.php">
+      UTCP: University of Tokyo Center for Philosophy
+    </a>
+  </li>
+
+  <li>
+    Supported by Nishihara Cultural Foundation <br>
+    　　Co-organized by HMC:The University of Tokyo, Humanities Center, UTCP: University of Tokyo Center for Philosophy
+  </li>
 </ul>

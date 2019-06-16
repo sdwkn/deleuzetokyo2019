@@ -5,7 +5,8 @@
 
     // Init functions, called on DOMContentLoaded event
     conf.init = function () {
-        conf.map.init($('#map-canvas'));
+        conf.map.init($('#map-canvas_camp'));
+        conf.map2.init($('#map-canvas_conf'));
         conf.menu.init();
     };
 
@@ -40,7 +41,7 @@
     };
 
     conf.map.createMarker = function () {
-        
+
         conf.map.address = conf.map.element.attr('data-address');
 
         conf.map.geocoder.geocode({ 'address': conf.map.address}, function (results, status) {
@@ -53,6 +54,59 @@
                     map: conf.map.canvas,
                     position: results[0].geometry.location,
                     icon: conf.map.marker
+                });
+            } else {
+                if (window.console) {
+                    console.log('Google Maps was not loaded: ', status);
+                }
+            }
+        });
+    };
+
+    /***
+        Google Maps implementation
+    ***/
+    conf.map2 = {
+        marker: '/img/marker-default.png'
+    };
+
+    // Google Maps configs
+    conf.map2.init = function ($element) {
+        conf.map2.element = $element;
+
+        conf.map2.geocoder = new google.maps.Geocoder();
+
+        conf.map2.latlng = new google.maps.LatLng(0, 0);
+
+        conf.map2.options = {
+            zoom: 16,
+            center: conf.map2.latlng,
+            scrollwheel: false,
+            streetViewControl: true,
+            labels: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        conf.map2.canvas = new google.maps.Map(conf.map2.element.get(0), conf.map2.options);
+        conf.map2.canvas.setCenter(conf.map2.latlng);
+
+        conf.map2.createMarker();
+    };
+
+    conf.map2.createMarker = function () {
+
+        conf.map2.address = conf.map2.element.attr('data-address');
+
+        conf.map2.geocoder.geocode({ 'address': conf.map2.address}, function (results, status) {
+
+            if (status === google.maps.GeocoderStatus.OK) {
+
+                conf.map2.canvas.setCenter(results[0].geometry.location);
+
+                new google.maps.Marker({
+                    map: conf.map2.canvas,
+                    position: results[0].geometry.location,
+                    icon: conf.map2.marker
                 });
             } else {
                 if (window.console) {
@@ -86,7 +140,7 @@
         var $link = $(link),
             href = $link.attr('href'),
             offSetTop = $(href).offset().top;
-        
+
         conf.menu.document.finish().animate({scrollTop : offSetTop}, conf.menu.animationSpeed, function () {
             location.hash = href;
         });

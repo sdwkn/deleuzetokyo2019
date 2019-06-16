@@ -1,0 +1,11 @@
+<h2 class="section-title">{{ .titles.conf }}</h2>
+
+<p>21-23 June 2019,</p>
+<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+  <span itemprop="streetAddress">Conference </span>
+  <span itemprop="streetAddress">{{ .address_conf }}. </span>
+  <span itemprop="addressLocality">{{ .city_conf }}</span>,
+  <span itemprop="addressRegion"> {{ .state }}</span>
+</p>
+
+<div id="map-canvas_conf" class="location-area" data-address="{{ .address_conf }}, {{ .city_conf }} - {{ .state }}"></div>

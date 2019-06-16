@@ -1,0 +1,41 @@
+<h2 class="section-title">{{ .titles.camp }}</h2>
+
+<div class="dead_line_wrapper">
+  <h4 class="dead_line">
+    DEADLINE EXIT<br>
+    Thank you all for applying!!
+  </h4>
+</div>
+
+
+<p>
+Just before the conference, 17-19 June 2019, we are going to hold a summer school “Deleuze/Guattari Camp” <a href="https://www.3331.jp/en/" target="_blank">at an Art Center in Tokyo (3331 arts chiyoda, 6-11-14, Sotokanda, Chiyoda-ku)</a>
+</p>
+
+<p>
+This event, although not part of the Conference, is however closely connected to it. Famous Deleuzian scholars from all over the world and Japan will give lectures in a very friendly atmosphere.
+</p>
+
+<p>
+Camp also includes some extracurricular activities.
+</p>
+
+<p>
+There will be a workshop on Japanese Noh play (traditional Japanese theatre in which songs, dance, and mime are performed by people wearing masks), entirely designed by <a href="https://www.ntj.jac.go.jp/english/access/facilities_03.html" target="_blank">National Noh Theatre.</a>
+</p>
+
+<p>
+There will also be a visit to the exhibition of Deleuze-inspired young Japanese artists’ artwork.
+You can join both the Camp and Conference or either of them.
+</p>
+
+<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+  <a href="https://www.3331.jp/en/" target="_blank">
+  <span itemprop="streetAddress">Camp </span>
+  <span itemprop="streetAddress">{{ .address_camp }}. </span>
+  <span itemprop="addressLocality">{{ .city_camp }}</span>,
+  <span itemprop="addressRegion"> {{ .state }}</span>
+  </a>
+</p>
+
+<div id="map-canvas_camp" class="location-area" data-address="{{ .address_camp }}, {{ .city_camp }} - {{ .state }}"></div>

@@ -1,9 +1,21 @@
 <h2 class="section-title">{{ .titles.location }}</h2>
 
 <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-  <span itemprop="streetAddress">{{ .address }}. </span>
-  <span itemprop="addressLocality">{{ .city }}</span>,
+  <span itemprop="streetAddress">Camp </span>
+  <span itemprop="streetAddress">{{ .address_camp }}. </span>
+  <span itemprop="addressLocality">{{ .city_camp }}</span>,
   <span itemprop="addressRegion"> {{ .state }}</span>
 </p>
 
-<div id="map-canvas" class="location-area" data-address="{{ .address }}, {{ .city }} - {{ .state }}"></div>
+<div id="map-canvas_camp" class="location-area" data-address="{{ .address_camp }}, {{ .city_camp }} - {{ .state }}"></div>
+
+<br><br>
+
+<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+  <span itemprop="streetAddress">Conference </span>
+  <span itemprop="streetAddress">{{ .address_conf }}. </span>
+  <span itemprop="addressLocality">{{ .city_conf }}</span>,
+  <span itemprop="addressRegion"> {{ .state }}</span>
+</p>
+
+<div id="map-canvas_conf" class="location-area" data-address="{{ .address_conf }}, {{ .city_conf }} - {{ .state }}"></div>

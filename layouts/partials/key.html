@@ -1,0 +1,7 @@
+<h2 class="section-title">{{ .titles.key }}</h2>
+
+<ul itemprop="description">
+{{ range $key := .key }}
+  <li>{{ .name }}</li>
+{{ end }}
+</ul>
